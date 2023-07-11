@@ -1,0 +1,29 @@
+class Solution {
+    public int numberOfBeams(String[] bank) {
+        int sum=0,one=0;
+        int[] res=new int[bank.length];
+        for(int i=0;i<bank.length;i++)
+        {
+            char[] ch = bank[i].toCharArray();
+            for(char c : ch)
+            {
+                if(c=='1')one++;
+            }
+            res[i]=one;
+            one=0;
+        }
+        for(int i=0;i<res.length;i++){
+            if(res[i]!=0){
+                for(int j=i+1;j<res.length;j++)
+                {
+                    if(res[j]==0)continue;
+                    else {
+                        sum+=res[i]*res[j];
+                        break;
+                    }
+                }
+            }
+        }
+        return sum;
+    }
+}
