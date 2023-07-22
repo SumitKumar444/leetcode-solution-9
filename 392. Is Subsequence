@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        char sArr[]=s.toCharArray();
+        char tArr[]=t.toCharArray();
+        int i=0,j=0;
+        int n=s.length(),m=t.length();
+        if(n<1)return true;
+        while(i<m){
+            if(tArr[i]==sArr[j])j++;
+            i++;
+            if(j==n)return true;
+        }
+        return false;
+    }
+}
