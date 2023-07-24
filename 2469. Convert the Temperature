@@ -1,0 +1,10 @@
+class Solution {
+    public double[] convertTemperature(double celsius) {
+        double cel=celsius;
+        double far=cel*1.80 + 32.00;
+        double kel=cel+273.15;
+        //double arr[]={kel,far};
+        return new double[]{kel, far};
+    }
+    
+}
